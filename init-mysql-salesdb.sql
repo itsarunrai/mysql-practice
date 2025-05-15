@@ -77,5 +77,24 @@ CREATE TABLE Orders (
     ShipDate DATE,
     OrderStatus VARCHAR(50),
     ShipAddr VARCHAR(255),
+    Sales int,
     PRIMARY KEY (OrderID)
 );
+
+-- ======================================================
+-- Insert data into Orders table
+-- Ensure all foreign key references (ProductID, CustomerID, SalesPersonID) match existing records.
+-- ======================================================
+
+INSERT INTO Orders (OrderID, ProductID, CustomerID, SalesPersonID, OrderDate, ShipDate, OrderStatus, ShipAddr, Sales) VALUES
+    (1001, 101, 1, 2, '2023-01-01', '2023-01-05', 'Shipped', '123 Elm St, Berlin', 30),
+    (1002, 102, 2, 3, '2023-02-15', '2023-02-18', 'Delivered', '456 Oak Ave, New York', 45),
+    (1003, 103, 3, 4, '2023-03-10', '2023-03-13', 'Delivered', '789 Pine Ln, Chicago', 60),
+    (1004, 104, 4, 2, '2023-04-20', '2023-04-22', 'Pending', '321 Maple Dr, Munich', 75),
+    (1005, 105, 5, 1, '2023-05-25', '2023-05-29', 'Cancelled', '654 Birch Blvd, Boston', 90),
+    (1006, 102, 1, 3, '2023-06-11', '2023-06-14', 'Delivered', '987 Cedar St, Berlin', 50),
+    (1007, 101, 2, 4, '2023-07-08', '2023-07-12', 'Shipped', '111 Walnut Ave, New York', 35),
+    (1008, 103, 3, 2, '2023-08-19', '2023-08-21', 'Returned', '222 Cherry Ln, LA', 40),
+    (1009, 104, 4, 3, '2023-09-23', '2023-09-26', 'Delivered', '333 Spruce Rd, Hamburg', 65),
+    (1010, 105, 5, 1, '2023-10-30', '2023-11-02', 'Delivered', '444 Magnolia St, Houston', 85);
+
